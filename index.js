@@ -11,8 +11,8 @@ class RangeValidator {
    * @param {number} to
    */
   constructor(from, to) {
-    this._from = from;
-    this._to = to;
+    this.from = from;
+    this.to = to;
   }
 
   // Реализовать getter'ы и setter'ы для обоих свойств
