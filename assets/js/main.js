@@ -10,6 +10,7 @@ class RangeValidator {
    * @param {number} from
    * @param {number} to
    */
+
   constructor(from, to) {
     this.from = from;
     this.to = to;
@@ -21,27 +22,30 @@ class RangeValidator {
     if (typeof newFrom !== "number") {
       throw new TypeError("Parameters have unappropriate type");
     }
+
     if (from >= to) {
-      throw new RangeError(
-        "The first number cannot be greater than the second"
-      );
+      throw new RangeError("The first number cannot be greater than the second");
     }
+
     this._from = newFrom;
   }
+
   get from() {
     return this._from;
   }
+
   set to(newTo) {
     if (typeof newTo !== "number") {
       throw new TypeError("Parameters have unappropriate type");
     }
+
     if (to <= from) {
-      throw new RangeError(
-        "The second number cannot be greater than the first"
-      );
+      throw new RangeError("The second number cannot be greater than the first");
     }
+
     this._to = newTo;
   }
+
   get to() {
     return this._to;
   }
@@ -58,9 +62,11 @@ class RangeValidator {
     if (typeof num !== "number") {
       throw new TypeError("Parameters have unappropriate type");
     }
+
     if (num >= this._from && num <= this._to) {
       return num;
     }
+    
     throw new RangeError("Out of range");
   }
 }
